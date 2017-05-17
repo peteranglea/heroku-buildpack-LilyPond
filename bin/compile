@@ -29,6 +29,7 @@ if hash lilypond 2>/dev/null; then
 else
 	echo "-----> Installing LilyPond"
 	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/ --batch
+	cp -rv /app/* $BUILD_DIR/app/
 fi
 
 
