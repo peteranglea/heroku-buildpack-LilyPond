@@ -8,13 +8,13 @@ LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 mkdir -p $CACHE_DIR
 cd $CACHE_DIR
-file1="lilypond-2.18.2-1.linux-64.sh"
+file1="lilypond-2.19.82-1.linux-64.sh"
 if [ -f $file1 ]
 then
     echo "-----> Download found"
 else
 	echo "-----> Downloading LilyPond"
-	curl http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh > $file1
+	curl http://lilypond.org/download/binaries/linux-64/lilypond-2.19.82-1.linux-64.sh > $file1
 	if [ -f $file1 ]
 	then
 		echo "-----> Download complete"
@@ -28,7 +28,7 @@ if hash lilypond 2>/dev/null; then
 	echo "-----> LilyPond already installed"
 else
 	echo "-----> Installing LilyPond"
-	sh lilypond-2.18.2-1.linux-64.sh --prefix=/app/lilypond --batch
+	sh lilypond-2.19.82-1.linux-64.sh --prefix=/app/lilypond --batch
 	cp -r /app/lilypond $BUILD_DIR/
 fi
 
